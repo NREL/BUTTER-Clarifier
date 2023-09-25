@@ -17,7 +17,7 @@ setup(name='interpretability',
         'tensorflow',
         'scikit-learn',
         'numpy',
-        'scikeras'
+        'numpyencoder'
       ],
       extras_require={
         "test":[

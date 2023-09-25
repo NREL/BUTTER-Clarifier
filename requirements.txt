@@ -1,5 +1,5 @@
 tensorflow
 scikit-learn
-scikeras
 numpy
+numpyencoder
 pytest

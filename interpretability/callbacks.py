@@ -6,13 +6,13 @@ Author: Jordan Perr-Sauer
 Description: Keras API callback to integrate interpretability module into Keras training routines.
 """
 
-import interpretability.metrics as metrics
-from interpretability.utils import NpEncoder
-import tensorflow
 import json
+import tensorflow
 from collections import defaultdict
-
+from numpyencoder import NumpyEncoder
 from pathlib import Path
+
+from interpretability import metrics
 
 class InterpretabilityMetricsKerasCallback(tensorflow.keras.callbacks.Callback):
 
@@ -20,6 +20,7 @@ class InterpretabilityMetricsKerasCallback(tensorflow.keras.callbacks.Callback):
         """
         Keras Callback
         """
+
         self.epochs = epochs
         self.save_to_path = save_to_path
         self.data = data
@@ -86,7 +87,7 @@ class InterpretabilityMetricsKerasCallback(tensorflow.keras.callbacks.Callback):
                 base_path = self.save_to_path+f"/epoch={epoch}"
                 Path(base_path).mkdir(parents=True, exist_ok=True)
                 with open(base_path+'/logs.json', 'w') as outfile:
-                    json.dump(out, outfile, cls=NpEncoder)
+                    json.dump(out, outfile, cls=NumpyEncoder)
             
             if self.save_to_history:
                 for key, value in out.items():

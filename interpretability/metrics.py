@@ -8,20 +8,15 @@ Description: Functions implementing various techniques to interpret and explain 
 
 from re import M
 import tensorflow as tf
+import logging
 import numpy as np
 from collections import defaultdict
-
-from scikeras.wrappers import KerasRegressor, KerasClassifier
 
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LinearRegression
 from sklearn.inspection import permutation_importance
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-
-import functools
-import logging
-
-import numpy
+#from scikeras.wrappers import KerasRegressor, KerasClassifier
 
 # Basic statistics of the weights and biases
 
@@ -56,7 +51,7 @@ def sparsity(model:tf.keras.Sequential):
 
 # Network dissection using layerwise linear models
 
-def _get_forward_activations(model:tf.keras.Sequential, X_data:numpy.ndarray):
+def _get_forward_activations(model:tf.keras.Sequential, X_data:np.ndarray):
     """
     Utility function to compute activations of each unit in model with respect to X_data
     """
