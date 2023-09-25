@@ -1,16 +1,15 @@
 # BUTTER-Clarifier
 
-This repository contains a python package of metrics for neural network interpretability and a keras callback to easily compute and capture these metrics during training. It was developed to be used with the [BUTTER Deep Learning Experimental Framework](https://github.com/NREL/BUTTER-Empirical-Deep-Learning-Experimental-Framework), but has APIs which may be useful to projects outside of this framework.
+This repository contains a python package of neural network interpretability techniques and a keras callback to easily compute and capture data related to these techniques (we call these values `metrics`) during training. It was developed to be used with the [BUTTER Deep Learning Experimental Framework](https://github.com/NREL/BUTTER-Empirical-Deep-Learning-Experimental-Framework), but has APIs which may be useful to projects outside of this framework.
 
 ## Installation
 
 ### Dependencies
 
-- Developed with Python 3.11 on Linux
-- Tensorflow
-- Scikit-Learn
-- Scikeras
-- Numpy
+- Developed using Python 3.11 with pip on Linux.
+- tensorflow
+- sklearn
+- keras
 
 ### VSCode
 
@@ -95,7 +94,7 @@ print(out)
     - Metrics.py: Functions that implement the explainability metrics.
 - /test: Python tests that can be run from the command line or as part of a CI pipeline.
 
-## No Expextation of Support
+## No Expectation of Support
 
 This software is released without the expectation of support. If you run into issues using this software, you may report an issue using the Github issue tracker. However, the developers do not make any guarantees about responding to these issues.
 
