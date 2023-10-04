@@ -16,4 +16,4 @@ jobs:
           python-version: '3.11'
           cache: 'pip' # caching pip dependencies
       - run: pip install -e .[test]
-      - run: pytest ./test
+      - run: python -m pytest ./test
