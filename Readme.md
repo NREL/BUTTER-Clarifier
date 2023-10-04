@@ -1,23 +1,23 @@
 # BUTTER-Clarifier
 
-This repository contains a python package of neural network interpretability techniques and a keras callback to easily compute and capture data related to these techniques (we call these values `metrics`) during training. It was developed to be used with the [BUTTER Deep Learning Experimental Framework](https://github.com/NREL/BUTTER-Empirical-Deep-Learning-Experimental-Framework), but has APIs which may be useful to projects outside of this framework.
+This repository contains a python package of neural network interpretability techniques (`interpretability`) and a keras callback to easily compute and capture data related to these techniques (we call these values `metrics`) during training. It was developed to be used with the [BUTTER Deep Learning Experimental Framework](https://github.com/NREL/BUTTER-Empirical-Deep-Learning-Experimental-Framework), but does not depend on this framework and may be useful to projects outside of this framework.
+
+The vision for this codebase is to collect algorithms for explainable artificial intelliegnce (XAI) in a single framework that is easy to use, easy to read, and can be expand upon. Here, we package XAI algorithms into a module called "metrics", which are implemented as python functions. The return type of a metric is typically a dictionary holding data of multiple data types, such as real values and numpy matrices. Callbacks and any other connector code is provided as necessary in a separate module to make these metrics more easily usable. This project depends on Tensorflow's Keras API, although it would be nice to try and support multiple backends one day.
 
 ## Installation
 
 ### Dependencies
-
 - Developed using Python 3.11 with pip on Linux.
-- tensorflow
-- sklearn
-- keras
+- Tensorflow 2.13+
+- Scikit-Learn
 
-### VSCode
+### VSCode Devcontainer
 
 This package was developed using VSCode Dev Containers and contains VSCode configuration files. The easiest way to get started developing this package is to check this project out from Github using VSCode and open it using the VSCode Dev Containers extension.
 
-### Manual Install
+### Manual Install using Pip
 
-To manually clone and install this project:
+Manually installing the package is also easy. To manually clone and install this project:
 
 ```shell
 $ git clone [URL TO THIS REPO]
@@ -25,7 +25,9 @@ $ cd ./BUTTER-Clarifier
 $ pip install -e .[test]
 ```
 
-Tests can be run using:
+### Testing
+
+Pytest should be installed automatically when using the `[test]` extra argument, but you can install it manually using `pip install pytest` if needed. Tests can be run with the following command:
 
 ```shell
 $ pytest ./test
@@ -68,9 +70,6 @@ print(interpretability_callback.history)
 
 Instead of using the Keras callback, you can also use metric functions directly. Each set of metrics are implemented as Python functions. They have similar signatures, with the model being the first argument. However, some metrics require extra inputs and so they do not have idential signatures.
 
-- basic_statistics
-- linear_probes
-
 Example:
 ```python
 from interpretability.metrics import basic_statistics, linear_probes
@@ -87,6 +86,21 @@ out = linear_probes(model, X_test, y_test)
 print(out)
 ```
 
+### List of Metrics
+
+The following metrics are implemented. For more information on these metrics, including academic citations, please see the inline documentation.
+
+| metric name | description | outputs |
+| ---- | ---- | ---- |
+| basic_statistics | Package of basic statistics of weights and biases | Means of the weights and biases | 
+| sparsity | Package of metrics relateded to sparsity | Number of non-zero weights and biases. |
+| layerwise_pca | Computes principal component analysis (PCA) of activations for each layer | Explained variance | 
+| linear_probes | Computes a linear regression of activations for each layer | MSE and MAE error for each layer | 
+| linear_cka | Linear Centered Kernel Alignment | Correlation matrix over the number of hidden layers | 
+| cca | Cannonical Correlation Analysis | Correlation matrix over the number of hidden layers | 
+| split_relus | Computes those hidden units which are split by the given input data | Boolean mask over hidden units, as well as total count and ratio of split units | 
+
+
 ## Repository Contents
 
 - /interpretability: Python package containing metrics and the keras callback.
@@ -100,7 +114,7 @@ This software is released without the expectation of support. If you run into is
 
 ## Contributing and Roadmap
 
-The vision for this codebase is to collect algorithms for explainable artificial intelliegnce (XAI) in a single framework that is easy to read and expand upon. We call XAI algorithms "metrics", which are implemented as python functions. Callbacks and any other connector code is provided as necessary to make these metrics more easily usable. This project is based on Keras / Tensorflow, although it would be interesting to try and support multiple backends one day. Some places where this codebase could be improved include:
+Some places where this codebase could be improved include:
 - Adding more metrics.
 - Adding more comprehensive tests.
 - Improving the documentation and generating a documentation website.

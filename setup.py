@@ -14,7 +14,7 @@ setup(name='interpretability',
           include=['interpretability']
       ),
       install_requires=[
-        'tensorflow',
+        'tensorflow>=2.13',
         'scikit-learn',
         'numpy',
         'numpyencoder'
