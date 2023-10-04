@@ -1,5 +1,7 @@
 # BUTTER-Clarifier
 
+![Tests Workflow Badge](https://github.com/jordanperr/BUTTER-Clarifier/actions/workflows/tests.yml/badge.svg)
+
 This repository contains a python package of neural network interpretability techniques (`interpretability`) and a keras callback to easily compute and capture data related to these techniques (we call these values `metrics`) during training. It was developed to be used with the [BUTTER Deep Learning Experimental Framework](https://github.com/NREL/BUTTER-Empirical-Deep-Learning-Experimental-Framework), but does not depend on this framework and may be useful to projects outside of this framework.
 
 The vision for this codebase is to collect algorithms for explainable artificial intelliegnce (XAI) in a single framework that is easy to use, easy to read, and can be expand upon. Here, we package XAI algorithms into a module called "metrics", which are implemented as python functions. The return type of a metric is typically a dictionary holding data of multiple data types, such as real values and numpy matrices. Callbacks and any other connector code is provided as necessary in a separate module to make these metrics more easily usable. This project depends on Tensorflow's Keras API, although it would be nice to try and support multiple backends one day.
