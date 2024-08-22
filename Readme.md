@@ -141,8 +141,7 @@ This software was written by Jordan Perr-Sauer as part of the National Renewable
 
 ## References
 
-[^1]: 
-Kornblith, S., Norouzi, M., Lee, H. &amp; Hinton, G.. (2019). Similarity of Neural Network Representations Revisited. <i>Proceedings of the 36th International Conference on Machine Learning</i>, in <i>Proceedings of Machine Learning Research</i> 97:3519-3529 Available from https://proceedings.mlr.press/v97/kornblith19a.html.
+[^1]: Kornblith, S., Norouzi, M., Lee, H. &amp; Hinton, G.. (2019). Similarity of Neural Network Representations Revisited. <i>Proceedings of the 36th International Conference on Machine Learning</i>, in <i>Proceedings of Machine Learning Research</i> 97:3519-3529 Available from https://proceedings.mlr.press/v97/kornblith19a.html.
 
 [^2]: Raghu, M., Gilmer, J., Yosinski, J., & Sohl-Dickstein, J.N. (2017). SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability. Neural Information Processing Systems.
 
