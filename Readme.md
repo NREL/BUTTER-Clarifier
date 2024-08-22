@@ -10,7 +10,7 @@ The vision for this codebase is to collect algorithms for explainable artificial
 
 ### Dependencies
 - Developed using Python 3.11 with pip on Linux.
-- Tensorflow 2.13+
+- Tensorflow 2.13
 - Scikit-Learn
 
 ### VSCode Devcontainer
