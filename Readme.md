@@ -141,11 +141,11 @@ This software was written by Jordan Perr-Sauer as part of the National Renewable
 
 ## References
 
-[^1] 
+[^1]: 
 Kornblith, S., Norouzi, M., Lee, H. &amp; Hinton, G.. (2019). Similarity of Neural Network Representations Revisited. <i>Proceedings of the 36th International Conference on Machine Learning</i>, in <i>Proceedings of Machine Learning Research</i> 97:3519-3529 Available from https://proceedings.mlr.press/v97/kornblith19a.html.
 
-[^2] Raghu, M., Gilmer, J., Yosinski, J., & Sohl-Dickstein, J.N. (2017). SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability. Neural Information Processing Systems.
+[^2]: Raghu, M., Gilmer, J., Yosinski, J., & Sohl-Dickstein, J.N. (2017). SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability. Neural Information Processing Systems.
 
-[^3] Alain, G., & Bengio, Y. (2016). Understanding intermediate layers using linear classifier probes. ArXiv, abs/1610.01644.
+[^3]: Alain, G., & Bengio, Y. (2016). Understanding intermediate layers using linear classifier probes. ArXiv, abs/1610.01644.
 
-[^4] Bak, S. (2021). nnenum: Verification of ReLU Neural Networks with Optimized Abstraction Refinement. In: Dutle, A., Moscato, M.M., Titolo, L., Muñoz, C.A., Perez, I. (eds) NASA Formal Methods. NFM 2021. Lecture Notes in Computer Science(), vol 12673. Springer, Cham. https://doi.org/10.1007/978-3-030-76384-8_2
+[^4]: Bak, S. (2021). nnenum: Verification of ReLU Neural Networks with Optimized Abstraction Refinement. In: Dutle, A., Moscato, M.M., Titolo, L., Muñoz, C.A., Perez, I. (eds) NASA Formal Methods. NFM 2021. Lecture Notes in Computer Science(), vol 12673. Springer, Cham. https://doi.org/10.1007/978-3-030-76384-8_2
