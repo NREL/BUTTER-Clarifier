@@ -127,7 +127,7 @@ def linear_cka(model:tf.keras.Model, inputs, outputs):
 
 def cca(model:tf.keras.Model, inputs, outputs):
     """
-    Linear Centered Kernel Alignment
+    Centered 
     References: Kornblith, "Similarity of Neural Network Representations Revisited", 2019
     Output: (M-1)x(M-1) np.ndarray(float) where M is the number of layers in the model
     """

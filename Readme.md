@@ -70,7 +70,7 @@ print(interpretability_callback.history)
 
 ### Using the metrics module
 
-Instead of using the Keras callback, you can also use metric functions directly. Each set of metrics are implemented as Python functions. They have similar signatures, with the model being the first argument. However, some metrics require extra inputs and so they do not have idential signatures.
+Instead of using the Keras callback, you can also use metric functions directly. Each set of metrics are implemented as Python functions. They have similar signatures, with the model being the first argument. However, some metrics require extra inputs and so they do not have identical signatures.
 
 Example:
 ```python
@@ -92,15 +92,15 @@ print(out)
 
 The following metrics are implemented. For more information on these metrics, including academic citations, please see the inline documentation.
 
-| metric name | description | outputs |
-| ---- | ---- | ---- |
-| basic_statistics | Package of basic statistics of weights and biases | Means of the weights and biases | 
-| sparsity | Package of metrics relateded to sparsity | Number of non-zero weights and biases. |
-| layerwise_pca | Computes principal component analysis (PCA) of activations for each layer | Explained variance | 
-| linear_probes | Computes a linear regression of activations for each layer | MSE and MAE error for each layer | 
-| linear_cka | Linear Centered Kernel Alignment | Correlation matrix over the number of hidden layers | 
-| cca | Cannonical Correlation Analysis | Correlation matrix over the number of hidden layers | 
-| split_relus | Computes those hidden units which are split by the given input data | Boolean mask over hidden units, as well as total count and ratio of split units | 
+| metric name | description | outputs | references |
+| ---- | ---- | ---- | ---- |
+| basic_statistics | Package of basic statistics of weights and biases | Means of the weights and biases |  |
+| sparsity | Package of metrics relateded to sparsity | Number of non-zero weights and biases. | |
+| layerwise_pca | Computes principal component analysis (PCA) of activations for each layer | Explained variance | Inspired by [^1] [^2] |
+| linear_probes | Computes a linear regression of activations for each layer | MSE and MAE error for each layer | [^3] |
+| linear_cka | Linear Centered Kernel Alignment | Correlation matrix over the number of hidden layers | [^1] |
+| cca | Cannonical Correlation Analysis | Correlation matrix over the number of hidden layers | [^1] |
+| split_relus | Computes those hidden units which are split by the given input data | Boolean mask over hidden units, as well as total count and ratio of split units | Inspired by [^4] | 
 
 
 ## Repository Contents
@@ -119,10 +119,33 @@ This software is released without the expectation of support. If you run into is
 Some places where this codebase could be improved include:
 - Adding more metrics.
 - Adding more comprehensive tests.
+- Expanding metrics to different neural network architectures.
+- Add built-in visualization tools.
 - Improving the documentation and generating a documentation website.
 
 Contributions are welcome, but we can not guarantee responsiveness around pull requests. We recommend first creating an issue in the Github issue tracker to alert us of your intent to contribute. Then, fork this repository into your own account and make the changes in your own fork. Finally, submit a pull request into our `develop` branch from your fork referencing the issue.
 
+## Similar Projects
+
+- [Captum](https://github.com/pytorch/captum) for PyTorch provides a collection of over thirty different model interpretability methods and is under active development.
+
+- [Lucid](https://github.com/tensorflow/lucid) for Tensorflow. Last commit was in 2021, and the project was archived by the maintainer in 2024.
+
+- [ELI5](https://github.com/eli5-org/eli5) provides a unified interpretability api for multiple machine learning frameworks, including Scikit-Learn, Keras, and XGBoost. Appears to be inactive since 2022.
+
+- [TF-Explain](https://github.com/sicara/tf-explain) for Tensorflow, providing a callback architecture for training, and seven built-in interpretability methods. This library appears to be inactive since 2022.
+
 ## Acknowledgements
 
 This software was written by Jordan Perr-Sauer as part of the National Renewable Energy Laboratory's Laboratory Directed Research and Development program. It is released under software record SWR-23-61 "DMP Interpretability"
+
+## References
+
+[^1] 
+Kornblith, S., Norouzi, M., Lee, H. &amp; Hinton, G.. (2019). Similarity of Neural Network Representations Revisited. <i>Proceedings of the 36th International Conference on Machine Learning</i>, in <i>Proceedings of Machine Learning Research</i> 97:3519-3529 Available from https://proceedings.mlr.press/v97/kornblith19a.html.
+
+[^2] Raghu, M., Gilmer, J., Yosinski, J., & Sohl-Dickstein, J.N. (2017). SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability. Neural Information Processing Systems.
+
+[^3] Alain, G., & Bengio, Y. (2016). Understanding intermediate layers using linear classifier probes. ArXiv, abs/1610.01644.
+
+[^4] Bak, S. (2021). nnenum: Verification of ReLU Neural Networks with Optimized Abstraction Refinement. In: Dutle, A., Moscato, M.M., Titolo, L., Muñoz, C.A., Perez, I. (eds) NASA Formal Methods. NFM 2021. Lecture Notes in Computer Science(), vol 12673. Springer, Cham. https://doi.org/10.1007/978-3-030-76384-8_2
